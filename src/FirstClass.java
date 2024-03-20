@@ -47,5 +47,10 @@ List kathir = new ArrayList();
 System.out.println("lsit size ==== " + kathir);
 int packageUsed = checkPackage(30, 2, 5);
 
+String kathirvikki = "";
+
+Integer in = Integer.valueOf(kathirvikki);
+System.out.println(in);
+
     }
 }
