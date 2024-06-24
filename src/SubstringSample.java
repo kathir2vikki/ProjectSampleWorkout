@@ -1,6 +1,7 @@
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -88,6 +89,24 @@ public class SubstringSample extends Kathir {
             System.out.println("PC");
        // super.kathirMethod();
         System.out.println("Subclass ");
+
+
+        List<String>  clientIds = new ArrayList<>();
+
+       // clientIds = null;
+if(clientIds.isEmpty()) {
+
+    System.out.println("clientIds" +clientIds);
+}
+
+        String kat = " ";
+
+        if(Objects.equals(kat,"SMS"))
+        {
+            System.out.println("kat ===" + kat);
+        }
+
+
     }//SYSDATE format yyyy-mm-ddThh:mm:ss.nnn (example: 2019-09-02T11:40:03.374)
 
 

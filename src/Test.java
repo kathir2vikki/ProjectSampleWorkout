@@ -1,4 +1,3 @@
-import com.ingdirect.dg.lib.utils.crypt.aes.ext.GenericAesEncrypter;
 
 public class Test {
         public static void main(String[] args) throws Exception {
@@ -9,10 +8,11 @@ public class Test {
         String stringKey = "eEhdOFib_W5MFUebQ2l0aE6nOEYGic5g7IXXqcnmYigoxhLikAu7Z3Qlf31M2EgWnxQC2sMgHNhC";
 // final String sKeyP2 = properties.getProperty("secretKey.partTwo");
 // Update an old value
-        String decryptedValue = GenericAesEncrypter.getDecryptedValue(sKeyP2, stringKey);
+       // String decryptedValue = GenericAesEncrypter.getDecryptedValue(sKeyP2, stringKey);
         //   String encryptedValue = GenericAesEncrypter.getEncryptedValue(sKeyP2, stringKey);
         //  log.info("encryptedValue:{}",encryptedValue);
         //log.info("decryptedValue: {}",decryptedValue);
-        System.out.println("decryptedValue: " +decryptedValue);
+      //  System.out.println("decryptedValue: " +decryptedValue);
     }
 }
+
