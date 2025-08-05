@@ -54,7 +54,7 @@ public class OveridHashcodeequals {
     public static void main(String[] a)
     {
         Student s1 = new Student(1, "kathir");
-        Student s2 = new Student(1,"kathisr");
+        Student s2 = new Student(1,"kathir3");
         Student s3 = new Student();
         Student s4 = new Student();
 

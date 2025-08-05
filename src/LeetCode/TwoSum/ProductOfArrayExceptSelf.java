@@ -1,5 +1,7 @@
 package LeetCode.TwoSum;
 
+import java.util.Arrays;
+
 public class ProductOfArrayExceptSelf {
 
    /* public int[] productOfArray(int[] nums)
@@ -23,7 +25,7 @@ public class ProductOfArrayExceptSelf {
     }*/
 
 
-    public int[] productOfArray(int[] nums)
+  /*  public int[] productOfArray(int[] nums)
     {
         int[] left = new int[nums.length];
         int[] right = new int[nums.length];
@@ -49,14 +51,59 @@ public class ProductOfArrayExceptSelf {
         }
 
         return res;
+    }*/
+
+
+    /*
+        2       3       4       5
+
+        1       2      2*3    4*3*2   left
+      3*4*5    4*5      5       1     right
+
+     */
+    private int[] productOfArray(int[] nums) {
+        int n = nums.length;
+        int[] res = new int[nums.length];
+
+        int left = 1;
+
+        for(int i = 0; i<n; i++)
+        {
+            if(i>0)
+            {
+                left = left * nums[i-1];
+            }
+            res[i] = left;
+            System.out.println("Left result ===  " + res[i] );
+        }
+
+        int right = 1;
+
+        for(int i = n-1; i >= 0; i--)
+        {
+            if(i < n-1)
+            {
+                right = right * nums[i+1];
+            }
+            res[i] *= right;
+
+        }
+
+
+        return res;
+
     }
 
     public static void main (String a[])
     {
         ProductOfArrayExceptSelf productOfArrayExceptSelf = new ProductOfArrayExceptSelf();
-        int nums[] = {1,2,3,4};
+        int nums[] = {2,3,4,5};
         int[] finalProductArray = productOfArrayExceptSelf.productOfArray(nums);
 
-        System.out.println(" finalProductArray === " + finalProductArray); 
+        Arrays.stream(finalProductArray).forEach(System.out::println);
+
+
     }
+
+
 }

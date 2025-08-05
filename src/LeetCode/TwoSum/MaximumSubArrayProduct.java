@@ -19,6 +19,7 @@ public class MaximumSubArrayProduct {
 
         }
         System.out.println("maxProd === " + maxProd);
+        System.out.println("maxProd === " + soFarProd);
         maxProd = 1;
         for(int i = nums.length-1 ; i >= 0; i--)
         {
@@ -35,11 +36,11 @@ public class MaximumSubArrayProduct {
     {
         MaximumSubArrayProduct maxProductSubArray = new MaximumSubArrayProduct();
 
-        //int[] nums = {2,3,-2,4};
+        int[] nums = {2,3,-2,4};
 
        // int[] nums = {-3,-1,-1};
 
-        int[] nums = {-2};
+        // int[] nums = {-2};
 
         int finalProduct = maxProductSubArray.maxProductSubArray(nums);
 

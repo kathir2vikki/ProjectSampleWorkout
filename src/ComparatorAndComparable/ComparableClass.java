@@ -34,7 +34,7 @@ class Developer implements Comparable<Developer>
 
     @Override
     public int compareTo(Developer o) {
-   /*     if(id == o.id) {
+        if(id == o.id) {
             return 0;
         }
        else if(id > o.id)
@@ -43,9 +43,9 @@ class Developer implements Comparable<Developer>
         }
         else {
             return -1;
-        }*/
+        }
 
-        return name.compareTo(o.name);
+        //return name.compareTo(o.name);
     }
 }
 
@@ -55,7 +55,7 @@ public class ComparableClass {
     {
 List<Developer> d = new ArrayList<>();
         d.add( new Developer(5,"kathir"));
-        d.add(new Developer(2,"vikki"));
+        d.add(new Developer(7,"Vikki"));
 
             Collections.sort(d);
 

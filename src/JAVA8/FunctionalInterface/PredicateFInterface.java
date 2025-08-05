@@ -47,7 +47,20 @@ public class PredicateFInterface {
 
         kathirConsumer.display("printing kathir by customized consumer");
 
+        TrueOrNot trueOrNot = (x,y) -> {
+            return x.equals(y);
+        };
+
+        System.out.println("true or not " + trueOrNot.TrurORFalse("kathir","kathir424"));
+
+
+        Display display = (x) -> System.out.println(x);
+
+       display.printDisplay("katehheehrher");
+
     }
+
+
 }
 
 @FunctionalInterface
@@ -60,3 +73,21 @@ interface kathir {
 interface kathirConsumer{
     public void display(String a);
 }
+
+@FunctionalInterface
+interface SamplrPredicat{
+    boolean boolPredicate(String g);
+}
+
+    @FunctionalInterface
+    interface TrueOrNot
+    {
+        boolean TrurORFalse(String a, String b);
+    }
+
+
+    @FunctionalInterface
+interface Display{
+
+    void printDisplay(String a);
+    }

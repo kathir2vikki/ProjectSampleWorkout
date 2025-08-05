@@ -4,7 +4,7 @@ import LeetCode.Utils.Utils;
 
 public class MaximumSubArraySum {
 
-    public int [] maxSubArray(int[] nums)
+   /* public int [] maxSubArray(int[] nums)
     {
       int soFarMax = Integer.MIN_VALUE;
       int currentSum = 0;
@@ -39,6 +39,23 @@ public class MaximumSubArraySum {
       }
 return finalSumOfArray;
 
+    }*/
+
+
+    //kadane's Algorithm
+
+    private int maxSubArray(int[] nums) {
+
+        int result = nums[0];
+        int maxArray = nums[0];
+
+        for(int i = 1; i<nums.length;i++)
+        {
+            maxArray = Math.max(maxArray + nums[i], nums[i]);
+            result = Math.max(maxArray, result);
+        }
+        return result;
+
     }
 
     public static void main(String[] a )
@@ -47,8 +64,14 @@ return finalSumOfArray;
 
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 
-        int[] finalSubArray = maximumSubArray.maxSubArray(nums);
+       // int[] finalSubArray = maximumSubArray.maxSubArray(nums);
 
-        Utils.printArray(finalSubArray);
+        // Utils.printArray(finalSum);
+
+        int finalSum = maximumSubArray.maxSubArray(nums);
+
+        System.out.println("finalSum ===" + finalSum);
+
     }
+
 }

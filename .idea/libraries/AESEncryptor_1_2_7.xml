@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="AESEncryptor-1.2.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/jar_files/AESEncryptor-1.2.7.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jar_files/commons-codec-1.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

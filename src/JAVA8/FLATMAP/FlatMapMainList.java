@@ -34,6 +34,10 @@ public class FlatMapMainList {
 
        List<String> stringList = empClasses.stream().flatMap(q -> q.getEmpAdress().stream().map(EmpAddrss::getStreetName)).collect(Collectors.toList());
 
+       List<String> stringfinalList = empClasses.stream().flatMap(emp -> emp.getEmpAdress().stream().map(EmpAddrss::getStreetName)).collect(Collectors.toList());
+
+        stringfinalList.stream().forEach(System.out::println);
+
         stringList.forEach(System.out::println);
 
         List<String> stringListSample = empClasses.stream().flatMap(z -> z.getEmpAdress().stream().map(EmpAddrss::getStreetName)).collect(Collectors.toList());

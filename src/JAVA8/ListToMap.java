@@ -38,43 +38,48 @@ class Student
 
 public class ListToMap {
 
-    public static void main(String[] t) {
-        List<Student> studentList = new ArrayList<>();
+  public static void main(String[] t) {
+                 // Create a list of Student objects
+                 List<Student> studentList = new ArrayList<>();
 
-        studentList.add(new Student(1, "kathir"));
-        studentList.add(new Student(1, "kathirVikki"));
-        studentList.add(new Student(2, "vikki"));
+                 // Add students to the list
+                 studentList.add(new Student(1, "kathir"));
+                 studentList.add(new Student(1, "kathirVikki"));
+                 studentList.add(new Student(2, "vikki"));
 
-        HashMap<Integer,String> hm = studentList.stream()
-                .collect(Collectors
-                        .toMap(
-                                Student::getId,
-                                Student::getName,
-                                (x, y)
-                                        -> x + "," + y,
-                                HashMap::new));
+                 // Convert the list of students to a HashMap with student ID as key and names concatenated as value
+                 HashMap<Integer, String> hm = studentList.stream()
+                         .collect(Collectors.toMap(
+                                 Student::getId, // Key mapper
+                                 Student::getName, // Value mapper
+                                 (x, y) -> x + "," + y, // Merge function for duplicate keys
+                                 HashMap::new)); // Supplier for the resulting map
 
-        hm.forEach((x,y) -> System.out.println(x + "=" +y));
+                 // Print the HashMap
+                 hm.forEach((x, y) -> System.out.println(x + "=" + y));
 
-     Map<Integer, List<String>> lsmap =   studentList
-             .stream()
-                .collect(Collectors
-                        .groupingBy(Student::getId,
-                                Collectors
-                                        .mapping(Student::getName,Collectors.toList())));
-        lsmap.forEach((x,y) -> System.out.println(x + "==" +y));
+                 // Group students by their ID and collect names into a list
+                 Map<Integer, List<String>> lsmap = studentList
+                         .stream()
+                         .collect(Collectors.groupingBy(
+                                 Student::getId, // Classifier function
+                                 Collectors.mapping(Student::getName, Collectors.toList()))); // Downstream collector
 
-        Map<Integer, String> mapTwo = new HashMap<>();
-        mapTwo =  studentList.stream().collect(Collectors.toMap(Student::getId,
-                Student::getName,
-                (x,y) -> x + ", " +y,
-                HashMap::new));
+                 // Print the grouped map
+                 lsmap.forEach((x, y) -> System.out.println(x + "==" + y));
 
-        for(Map.Entry<Integer, String> mapThree : mapTwo.entrySet())
-        {
-            System.out.println("Key  ==== " + mapThree.getKey() + "Value =====" + mapThree.getValue());
-        }
+                 // Convert the list of students to a HashMap with student ID as key and names concatenated as value
+                 Map<Integer, String> mapTwo = new HashMap<>();
+                 mapTwo = studentList.stream().collect(Collectors.toMap(
+                         Student::getId, // Key mapper
+                         Student::getName, // Value mapper
+                         (x, y) -> x + ", " + y, // Merge function for duplicate keys
+                         HashMap::new)); // Supplier for the resulting map
 
-    }
+                 // Print the HashMap using a for-each loop
+                 for (Map.Entry<Integer, String> mapThree : mapTwo.entrySet()) {
+                     System.out.println("Key  ==== " + mapThree.getKey() + "Value =====" + mapThree.getValue());
+                 }
+             }
 
 }

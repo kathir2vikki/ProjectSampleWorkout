@@ -1,7 +1,5 @@
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -106,6 +104,39 @@ if(clientIds.isEmpty()) {
             System.out.println("kat ===" + kat);
         }
 
+        String samStr = "123123";
+
+        Integer in = Integer.parseInt(samStr);
+System.out.println("in in in in " + in);
+
+        String samStrOne = "29:34,56,23";
+
+        final int pos = samStrOne.indexOf(":");
+        System.out.println("in in in in " + samStrOne.substring(0,pos));
+
+
+        final int position = samStrOne.indexOf(":");
+        System.out.println("in in  " + samStrOne.substring(position +":".length()));
+
+
+        Map<String,String> hmMap = new HashMap<>();
+
+        hmMap.put("kathir", "1");
+        hmMap.put("kathir1", "2");
+
+        hmMap.entrySet().forEach((g) -> System.out.println(g.getKey() + "===" + g.getValue()));
+
+        String s = "wfm10.1.1-34,10.12.12.33";
+
+        String nodeis = s.substring(0,s.indexOf("-"));
+
+        System.out.println("nodeid" + nodeis);
+
+        int l = 3, r = 4;    
+        int mid = l + (r-l)/2;
+        int fl = 1/2;
+
+        System.out.println("mid vlaue" + mid);
 
     }//SYSDATE format yyyy-mm-ddThh:mm:ss.nnn (example: 2019-09-02T11:40:03.374)
 

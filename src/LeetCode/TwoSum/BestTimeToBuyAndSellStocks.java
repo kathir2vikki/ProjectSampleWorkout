@@ -5,24 +5,26 @@ import java.util.HashMap;
 
 public class BestTimeToBuyAndSellStocks {
 
-    public int maxProfit(int[] prices)
-    {
-      int maxProfit = 0;
-      int cheepPrice = prices[0];
+    public int maxProfit(int[] prices) {
 
-      for(int i = 1;i< prices.length; i++)
-      {
-          if(cheepPrice > prices[i])
-          {
-              cheepPrice = prices[i];
-          }
 
-          if(maxProfit < prices[i] - cheepPrice)
-          {
-              maxProfit =  prices[i] - cheepPrice;
-          }
-      }
-        return maxProfit;
+        int profit = 0;
+        int cheepPrice = prices[0];
+
+        for(int i=1;i<prices.length;i++)
+        {
+            if(cheepPrice > prices[i])
+            {
+                cheepPrice = prices[i];
+            }
+
+            if(profit < prices[i]-cheepPrice)
+            {
+                profit = prices[i]-cheepPrice;
+            }
+        }
+
+        return profit;
     }
 
     public static void main (String[] a)

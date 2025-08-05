@@ -25,29 +25,52 @@ public class TwoSum {
     }*/
 
     //o(n)
-
-    public int[] twoSum(int[] nums, int target) {
+//[2,7,11,15], target = 18
+/*    public int[] twoSum(int[] nums, int target) {
 
         HashMap<Integer,Integer> twoSumMap = new HashMap<>();
 
         for(int i = 0; i< nums.length; i++)
         {
-            int complement = target - nums[i];
+            int difference = target - nums[i];
 
-            if(twoSumMap.containsKey(complement))
+            if(twoSumMap.containsKey(difference))
             {
-                return new int[] {twoSumMap.get(complement), i};
+                return new int[] {twoSumMap.get(difference), i};
             }
             twoSumMap.put(nums[i],i);
         }
      return new int[]{};
+    }*/
+
+
+    //Two pointer
+
+    public int[] twoSum(int[] nums, int target )
+    {
+        Arrays.sort(nums);
+        int left = 0;
+        int right = nums.length-1;
+
+        for(int i = 0;i<nums.length;i++) {
+            int sum = nums[left] + nums[right];
+            if (sum > target) {
+                right--;
+            } else if (sum < target) {
+                left++;
+            } else {
+
+                return new int[]{left, right};
+            }
+        }
+        return new int[]{};
     }
 
     public static void main(String[] a)
     {
         TwoSum sum = new TwoSum();
-        int[] nums = {5,3,1};
-        int target = 8;
+        int[] nums = {0,1,3,5};
+        int target = 4;
         int[] indexses = sum.twoSum(nums, target);
         System.out.println("final value   = " + indexses[0] +"    === " + indexses[1]);
         int i = 1- 10;
